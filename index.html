@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafli Dafrian - Web2 & Web3 Developer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/index.js" defer></script>
+</head>
+<body>
+    <header>
+    <h1>Rafli Dafrian</h1>
+    <div class="typing-text" id="typing-text"></div>
+  </header>
+
+  <div class="container">
+    <section class="info-section fade-in">
+      <h2 class="section-title">Profile & Experience</h2>
+      <p>
+        Saya adalah seorang Web2 & Web3 Developer dan mahasiswa Teknik Informatika (Kelas 05TPLE006) di Universitas Pamulang yang berdomisili di Tangerang. Saya memiliki minat yang kuat dalam pengembangan aplikasi web, machine learning, serta keamanan siber (cybersecurity).
+      </p>
+      <p>
+        <strong>Pengalaman Profesional:</strong><br>
+        PT Seraphim Digital Technology &mdash; <em>IT Infrastructure / Developer</em>
+      </p>
+      
+      <div class="skills-container">
+        <?php foreach($skills as $skill): ?>
+          <span class="skill-tag"><?php echo htmlspecialchars($skill); ?></span>
+        <?php endforeach; ?>
+      </div>
+    </section>
+
+    <h2 class="section-title fade-in">My Projects</h2>
+    <section class="projects">
+      <?php foreach($projects as $index => $project): ?>
+        <div class="project fade-in" style="transition-delay: <?php echo $index * 0.1; ?>s;">
+          <h3><?php echo htmlspecialchars($project['title']); ?></h3>
+          <p><?php echo htmlspecialchars($project['desc']); ?></p>
+          <p class="tech-stack">⚙️ <?php echo htmlspecialchars($project['tech']); ?></p>
+          <a href="<?php echo htmlspecialchars($project['link']); ?>" target="_blank">View on GitHub</a>
+        </div>
+      <?php endforeach; ?>
+    </section>
+
+    <section class="contact fade-in">
+      <h2 class="section-title">Let's Connect</h2>
+      <p>Tertarik untuk berkolaborasi atau berdiskusi seputar teknologi?</p>
+      <div class="contact-links">
+        <a href="mailto:raflidafrian220@gmail.com">Email Me</a>
+        <a href="https://github.com/Raflidafrian" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rafli-dafrian-65131b278/" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; <?php echo date("Y"); ?> Rafli Dafrian. All rights reserved.</p>
+  </footer>
+</body>
+</html>
